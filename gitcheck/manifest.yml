@@ -1,0 +1,11 @@
+---
+applications:
+- name: gitcheck
+  path: target/gitcheck-0.0.1-SNAPSHOT.war
+  random-route: true
+  memory: 1024M
+  buildpacks:
+  - java_buildpack
+  env:
+      JBP_CONFIG_COMPONENTS: '{jres: ["JavaBuildpack::Jre::SapMachineJRE"]}'
+      JBP_CONFIG_SAP_MACHINE_JRE: '{ jre: { version: 21.+ } }'
